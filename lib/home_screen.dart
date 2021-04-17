@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontFamily: "Almarai",
                   fontSize: 35,
                   color: Colors.grey[200])),
+                  // 
           SizedBox(
             height: 11,
           ),
