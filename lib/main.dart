@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Tataboq App",
+      title: "Picture Match",
       home: HomeScreen(),
     );
   }

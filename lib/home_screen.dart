@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,24 +9,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    Random _random = Random();
-    int leftNumber = _random.nextInt(9);
-    int rightNumber = _random.nextInt(9);
-
-    String firstImage = "assets/images/image-1.png";
-    String secondeImage = "assets/images/image-2.png";
+    int leftNumber = 2;
+    int rightNumber = 5;
 
     return Scaffold(
       backgroundColor: Colors.blue[500],
       appBar: AppBar(
-        title: Text("Tataboq App"),
+        title: Text("Picture Match"),
         centerTitle: true,
         backgroundColor: Colors.blue[600],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("حاول مرة أخرى",
+          Text((leftNumber == rightNumber) ? "You Win" : "Try Again",
               style: TextStyle(
                   fontFamily: "Almarai",
                   fontSize: 35,
@@ -42,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     onPressed: () {
                       setState(() {
-                        rightNumber = rightNumber;
+                        leftNumber = Random().nextInt(8) + 1;
+                        rightNumber = Random().nextInt(8) + 1;
                       });
                     },
                   ),
@@ -52,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Image.asset("assets/images/image-$leftNumber.png"),
                   onPressed: () {
                     setState(() {
-                      leftNumber = leftNumber;
+                      rightNumber = Random().nextInt(8) + 1;
+                      leftNumber = Random().nextInt(8) + 1;
                     });
                   },
                 ))
