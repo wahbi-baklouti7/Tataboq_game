@@ -7,11 +7,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int leftNumber = 2;
+  int rightNumber = 5;
+
   @override
   Widget build(BuildContext context) {
-    int leftNumber = 2;
-    int rightNumber = 5;
-
     return Scaffold(
       backgroundColor: Colors.blue[500],
       appBar: AppBar(
@@ -27,13 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontFamily: "Almarai",
                   fontSize: 35,
                   color: Colors.grey[200])),
+          SizedBox(
+            height: 11,
+          ),
           Container(
             child: Row(
               children: [
                 Expanded(
                   child: FlatButton(
                     child: Image.asset(
-                      "assets/images/image-$rightNumber.png",
+                      "assets/images/image-$leftNumber.png",
                     ),
                     onPressed: () {
                       setState(() {
@@ -45,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Expanded(
                     child: FlatButton(
-                  child: Image.asset("assets/images/image-$leftNumber.png"),
+                  child: Image.asset("assets/images/image-$rightNumber.png"),
                   onPressed: () {
                     setState(() {
                       rightNumber = Random().nextInt(8) + 1;
